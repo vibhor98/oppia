@@ -19,11 +19,11 @@
 oppia.controller('HistoryTab', [
   '$scope', '$http', '$rootScope', '$log', '$modal', 'explorationData',
   'versionsTreeService', 'compareVersionsService', 'graphDataService',
-  'oppiaDatetimeFormatter',
+  'DateTimeFormatService',
   function(
       $scope, $http, $rootScope, $log, $modal, explorationData,
       versionsTreeService, compareVersionsService, graphDataService,
-      oppiaDatetimeFormatter) {
+      DateTimeFormatService) {
     $scope.explorationId = explorationData.explorationId;
     $scope.explorationAllSnapshotsUrl =
         '/createhandler/snapshots/' + $scope.explorationId;
@@ -139,7 +139,7 @@ oppia.controller('HistoryTab', [
             $scope.explorationVersionMetadata[versionNumber] = {
               committerId: explorationSnapshots[i].committer_id,
               createdOnStr: (
-                oppiaDatetimeFormatter.getLocaleAbbreviatedDatetimeString(
+                DateTimeFormatService.getLocaleAbbreviatedDatetimeString(
                   explorationSnapshots[i].created_on_ms)),
               commitMessage: explorationSnapshots[i].commit_message,
               versionNumber: explorationSnapshots[i].version_number

@@ -21,12 +21,12 @@ oppia.constant('IMPROVE_TYPE_INCOMPLETE', 'incomplete');
 
 oppia.controller('StatisticsTab', [
   '$scope', '$http', '$modal', 'alertsService', 'explorationStatesService',
-  'explorationData', 'computeGraphService', 'oppiaDatetimeFormatter',
+  'explorationData', 'computeGraphService', 'DateTimeFormatService',
   'StatesObjectFactory', 'StateImprovementSuggestionService',
   'ReadOnlyExplorationBackendApiService', 'IMPROVE_TYPE_INCOMPLETE',
   function(
       $scope, $http, $modal, alertsService, explorationStatesService,
-      explorationData, computeGraphService, oppiaDatetimeFormatter,
+      explorationData, computeGraphService, DateTimeFormatService,
       StatesObjectFactory, StateImprovementSuggestionService,
       ReadOnlyExplorationBackendApiService, IMPROVE_TYPE_INCOMPLETE) {
     $scope.COMPLETION_RATE_CHART_OPTIONS = {
@@ -40,7 +40,7 @@ oppia.controller('StatisticsTab', [
     $scope.currentVersion = _EXPLORATION_STATS_VERSION_ALL;
 
     $scope.getLocaleAbbreviatedDatetimeString = function(millisSinceEpoch) {
-      return oppiaDatetimeFormatter.getLocaleAbbreviatedDatetimeString(
+      return DateTimeFormatService.getLocaleAbbreviatedDatetimeString(
         millisSinceEpoch);
     };
 

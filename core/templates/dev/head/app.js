@@ -435,7 +435,7 @@ oppia.factory('$exceptionHandler', ['$log', function($log) {
 
 // Service for converting dates in milliseconds since the Epoch to
 // human-readable dates.
-oppia.factory('oppiaDatetimeFormatter', ['$filter', function($filter) {
+/*oppia.factory('DateTimeFormatService', ['$filter', function($filter) {
   return {
     // Returns just the time if the local datetime representation has the
     // same date as the current date. Otherwise, returns just the date if the
@@ -466,7 +466,7 @@ oppia.factory('oppiaDatetimeFormatter', ['$filter', function($filter) {
       return new Date().getTime() - millisSinceEpoch < ONE_WEEK_IN_MILLIS;
     }
   };
-}]);
+}]);*/
 
 oppia.factory('rteHelperService', [
   '$filter', '$log', '$interpolate', 'explorationContextService',
