@@ -382,7 +382,7 @@ class CollectionSkill(object):
         CollectionSkillObjectFactory.
 
         Returns:
-            dict. The dict of CollectionSkill object.
+            dict. A dict version of the CollectionSkill object.
         """
         return {
             'name': self.name,
@@ -391,7 +391,8 @@ class CollectionSkill(object):
 
     @classmethod
     def from_dict(cls, skill_id, skill_dict):
-        """Returns the CollectionSkill object.
+        """Returns the CollectionSkill object corresponding to the given
+        skill_id and skill_dict.
 
         Args:
             skill_id: str. The skill ID.
@@ -408,13 +409,13 @@ class CollectionSkill(object):
 
     @staticmethod
     def get_skill_id_from_index(index):
-        """Returns the skill ID from the given index.
+        """Returns the skill ID associated with the given index.
 
         Args:
             index: int. The index of the collection skill.
 
         Raises:
-            ValidationError: The expected index is non-integer or negative.
+            ValidationError: The given index is non-integer or negative.
 
         Returns:
             str. The skill ID along with the corresponding index.
@@ -434,20 +435,14 @@ class CollectionSkill(object):
         """Validates the given skill ID.
 
         Args:
-            skill_id: str. The skill ID.
+            skill_id: str. The skill ID to validate.
 
         Raises:
-            ValidationError: The skill ID is not a string of length at least
-                6 and does not begin and end with a number.
+            ValidationError: The skill ID does not have the form skill{{digit}}.
         """
         if not isinstance(skill_id, basestring):
             raise utils.ValidationError(
                 'Expected skill ID to be a string, received %s' % skill_id)
-
-        if len(skill_id) < 6:
-            raise utils.ValidationError(
-                'Expected skill ID to have length at least 6, received %s' %
-                skill_id)
 
         if skill_id[:5] != _SKILL_ID_PREFIX:
             raise utils.ValidationError(
