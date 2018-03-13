@@ -163,7 +163,7 @@ oppia.factory('itemSelectionInputRulesService', ['$filter', function($filter) {
     },
     // TODO(wxy): migrate the name of this rule to OmitsAtLeastOneOf, keeping in
     // sync with the backend migration of the same rule.
-    DoesNotContainAtLeastOneOf: function(answer, inputs) {
+    OmitsAtLeastOneOf: function(answer, inputs) {
       var normalizedAnswer = $filter('removeDuplicatesInArray')(answer);
       var normalizedInput = $filter('removeDuplicatesInArray')(inputs.x);
       return normalizedInput.some(function(val) {
