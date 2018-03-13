@@ -84,7 +84,7 @@
     "ContainsAtLeastOneOf": {
       "description": "contains at least one of {{x|SetOfHtmlString}}"
     },
-    "DoesNotContainAtLeastOneOf": {
+    "OmitsAtLeastOneOf": {
       "description": "omits at least one of {{x|SetOfHtmlString}}"
     }
   },
