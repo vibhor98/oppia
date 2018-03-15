@@ -36,7 +36,7 @@ def open_access(handler):
 
 
 def can_play_exploration(handler):
-    """Decorator to check whether user can play given exploration."""
+    """Decorator to check whether user can play the given exploration."""
 
     def test_can_play(self, exploration_id, **kwargs):
         if exploration_id in feconf.DISABLED_EXPLORATION_IDS:
